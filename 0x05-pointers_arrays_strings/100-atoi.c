@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stdio.h>
 /**
  * main -  function that convert a string to an integer.
  * The number in the string can be preceded by an infinite number of characters

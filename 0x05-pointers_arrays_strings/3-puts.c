@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stdio.h>
 /**
  * main - a function that prints a string, followed by a new line, to stdout.
  * Return String and '\n'

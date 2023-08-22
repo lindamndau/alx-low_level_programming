@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stdio.h>
 /**
  * main -  a function that returns the length of a string.
  * Prototype: int _strlen(char *s);
