@@ -4,7 +4,6 @@
 * Prototype: void swap_int(int *a, int *b);
 *Swap pointer a and b
 */
-
 void swap_int(int *a, int *b);
 {
 	int c;
