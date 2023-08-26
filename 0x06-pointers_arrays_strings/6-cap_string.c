@@ -4,7 +4,7 @@
  * Separators of words: space, tabulation, new line, ,, ;, ., !, ?,, (, ), {, and },
  * Return - str Sucesss
  */
-char *cap_string(char *)
+char *cap_string(char *str)
 {
 	int i = 0, j = 0, c = 32;
 	char chars[] = {' ', ',', ';', '.', '!', '?', '"', '(', ')', '{', '}',  '\t', '\n', '\0'};
