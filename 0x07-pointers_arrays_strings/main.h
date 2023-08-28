@@ -1,4 +1,4 @@
-#ifndef MAIN-HEADER_FILE
+#ifndef MAIN_HEADER_FILE
 #define MAIN_HEARDER_FILE
 
 char *_memset(char *s, char b, unsigned int n);
