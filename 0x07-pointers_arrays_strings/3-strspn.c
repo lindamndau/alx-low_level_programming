@@ -5,17 +5,23 @@
  */
 unsigned int _strspn(char *s, char *accept)
 {
-	unsigned int  length = 0;
-	int i = 0, j = 0;
-	for (j = 0; *(s + j); j++)
+	int letter;
+	int pos = 0;
+
+	while (s[pos])
 	{
-		for (i = 0; *(accept + i); i++)
+		for (letter = 0; accept[letter]; letter++)
 		{
-			if (*(s + j) == *(accept + i))
+			if (accept[letter] == s[pos])
+			{
 				break;
+			}
 		}
-		if (*(accept + i) == '\0')
-		break;
+		if (!accept[letter])
+		{
+			break;
+		}
+		pos++;
 	}
-	return (j);
+	return (pos);
 }

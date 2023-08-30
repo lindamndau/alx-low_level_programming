@@ -6,17 +6,17 @@
 */
 void print_diagsums(int *a, int size)
 {
-	int i, j, sumdiag1 = 0, sumdiag2 = 0, step1, step2;
+	int n1 = 0;
+	int n2 = 0;
+	int i = 0;
 
-	for (i = 0; i <= (size - 1); i++)
+	while (i < size)
 	{
-		step1 =  (size + 1) * i;
-		sumdiag1 = sumdiag1 + *(a + step1);
+		n1 += a[i * (size + 1)];
+		n2 += a[(i + 1) * (size - 1)];
+		i++;
 	}
-	for (j = 1; j <= size; j++)
-	{
-		step2 = (size - 1) * j;
-		sumdiag2 = sumdiag2 + *(a + step2);
-	}
-	printf("%d, %d\n", sumdiag1, sumdiag2);
+	printf("%d, ", n1);
+	printf("%d", n2);
+	printf("\n");
 }
