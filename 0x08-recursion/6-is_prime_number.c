@@ -9,9 +9,9 @@ int is_prime_number(int n)
 	{
 		return (0);
 	}
-	for(i = 0; i <= (n / 2); i++)
+	for(n = 0; n <= (n / 2); n++)
 	{
-		if(n % i == 0)
+		if(n % n == 0)
 		{
 			return(0);
 		}
