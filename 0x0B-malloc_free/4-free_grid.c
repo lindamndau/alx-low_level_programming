@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdlib.h>
 /**
  * free_grid - free a 2-dimensional array created by alloc_grid
  * @grid: a pointer to the first column of the first row of the array
@@ -8,7 +9,11 @@
  */
 void free_grid(int **grid, int height)
 {
-	while (height)
-		free(grid[--height]);
+	int i;
+
+	for (i = 0; i < height; i++)
+	{
+		free(grid[i]);
+	}
 	free(grid);
 }
