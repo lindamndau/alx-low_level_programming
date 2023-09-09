@@ -12,7 +12,9 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	unsigned int i;
 
 	if (nmemb == 0 || size == 0)
+	{
 		return (NULL);
+	}
 	block = malloc(nmemb * size);
 	if (block != NULL)
 	{
@@ -21,5 +23,7 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 		return (block);
 	}
 	else
+	
 		return (NULL);
+	
 }
