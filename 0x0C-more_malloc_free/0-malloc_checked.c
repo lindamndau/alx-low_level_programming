@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdlib.h>
 /**
  * This function allocates memory using maloc.
  * Returns a pointer to the allocated memory

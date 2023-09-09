@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdlib.h>
 /**
  * This function allocates memory for an array, using malloc
  * The _calloc function allocates memory for an array of nmemb elements of size bytes each and returns a pointer to the allocated memory.

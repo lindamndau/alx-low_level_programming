@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdlib.h>
 /**
  * This function  creates an array of integers.
  * The array created should contain all the values from min (included) to max (included), ordered from min to max
