@@ -1,6 +1,4 @@
 #include "main.h"
-#include <stdio.h>
-#include <stdlib.h>
 /**
  * This function allocates memory for an array, using malloc
  * The _calloc function allocates memory for an array of nmemb elements of size bytes each and returns a pointer to the allocated memory.
@@ -10,23 +8,18 @@
  */
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
+	char *block;
 	unsigned int i;
 
-	*nmemb = (int)calloc(sizeof(size);
-
-	for(i = 0; i < size; i++)
+	if (nmemb == 0 || size == 0)
+		return (NULL);
+	block = malloc(nmemb * size);
+	if (block != NULL)
 	{
-		if(nmeb == 0 || size == 0)
-		{
-			return(NULL);
-		}
-		return(*nmemb);
+		for (i = 0; i < (nmemb * size); i++)
+			block[i] = 0;
+		return (block);
 	}
-
-	if(*nmemb == 0)
-	{
-		return(NULL);
-	}
-	free(nmemb);
-	return(0);
+	else
+		return (NULL);
 }
