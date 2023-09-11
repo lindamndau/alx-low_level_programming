@@ -1,1 +1,3 @@
-#define _SIZE_ 1024
+#define _SIZE_BUFFSIZE_
+#define BUFFSIZE 1024
+#endif
