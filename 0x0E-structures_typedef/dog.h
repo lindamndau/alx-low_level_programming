@@ -5,7 +5,7 @@
  * age .type =  float
  * owner .type =  char
  */
-struct dog
+typedef struct dog
 {
 	char* name;
 	float age;
