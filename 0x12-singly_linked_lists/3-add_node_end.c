@@ -12,49 +12,64 @@
  */
 list_t *add_node_end(list_t **head, const char *str)
 {
-	list_t *new, *aux = *head;
+	list_t *new;
+ 	list_t *temp = *head;
+ 	unsigned int len = 0;
 
-	new = malloc(sizeof(list_t));
-	if (new == NULL)
+ 	while (str[len])
 	{
-		return (NULL);
+ 		len++;
 	}
-	new->str = strdup(str);
-	if (!new->str)
+ 	new = malloc(sizeof(list_t));
+ 	if (!new)
 	{
-		free(new);
-		return (NULL);
-	}
-	new->len = _strlen_recursion(new->str);
-	new->next = NULL;
-
-	if (aux)
-	{
-		while (aux->next)
-		{
-			aux = aux->next;
-		}
-		aux->next = new;
-	}
-	else
-	{
-		*head = new;
+ 		return (NULL);
 	}
 
-	return (new);
-}
+ 	new->str = strdup(str);
+ 	new->len = len;
+ 	new->next = NULL;
 
-/**
- * _strlen_recursion - returns the length of a string.
- * @s: string.
- * Return: length of @s.
- */
-int _strlen_recursion(char *s)
-{
-	if (*s == 0)
-		return (0);
-	else
+ 	if (*head == NULL)
+ 	{
+ 		*head = new;
+ 		return (new);
+ 	}
+
+ 	while (temp->next)
 	{
-		return (1 + _strlen_recursion(s + 1));
+ 		temp = temp->next;
 	}
+
+ 	temp->next = new;
+ 	list_t *new;
+ 	list_t *temp = *head;
+	unsigned int len = 0;
+
+ 	while (str[len])
+	{
+ 		len++;
+	}
+
+ 	new = malloc(sizeof(list_t));
+ 	if (!new)
+	{
+ 		return (NULL);
+	}
+ 	new->str = strdup(str);
+ 	new->len = len;
+ 	new->next = NULL;
+
+ 	if (*head == NULL)
+ 	{
+ 	*head = new;
+ 	return (new);
+ 	}
+
+ 	while (temp->next)
+	{
+ 		temp = temp->next;
+	}
+ 	temp->next = new;
+ 	return (new);
 }
