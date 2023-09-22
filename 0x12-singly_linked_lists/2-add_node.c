@@ -1,46 +1,43 @@
 #include "lists.h"
-
-static listint_t *new_node(const int n);
-
+#include <string.h>
 /**
- * add_nodeint - add a node at the head of a list.
- * @head : pointer of a pointer to a list.
- * @n : value to set the new list to.
+ * add_node - Adds a new node at the beginning
+ *            of a list_t list.
+ * @head: A pointer to the head of the list_t list.
+ * @str: The string to be added to the list_t list.
  *
- * Return: pointer to a pointer of listint_t
+ * Return: If the function fails - NULL.
+ *         Otherwise - the address of the new element.
  */
-listint_t *add_nodeint(listint_t **head, const int n)
+list_t *add_node(list_t **head, const char *str)
 {
-	listint_t *new;
+	char *dup;
+	int len;
+	list_t *new;
 
-	if (!(*head))
-	{
-		*head = new_node(n);
-		return (*head);
-	}
-
-	new = new_node(n);
-	new->next = *head;
-	*head = new;
-	return (*head);
-}
-
-/**
- * new_node - creates a new listint_t node.
- * @n: number to place inside the node.
- *
- * Return: pointer to the new node.
- */
-static listint_t *new_node(const int n)
-{
-	listint_t *new;
-
-	new = malloc(sizeof(listint_t));
-	if (!new)
+	new = malloc(sizeof(list_t));
+	if (new == NULL)
 	{
 		return (NULL);
 	}
-	new->n = n;
-	new->next = NULL;
+
+	dup = strdup(str);
+	if (dup == NULL)
+	{
+		free(new);
+		return (NULL);
+	}
+
+	for (len = 0; str[len];)
+	{
+		len++;
+	}
+
+	new->str = dup;
+	new->len = len;
+	new->next = *head;
+
+	*head = new;
+
 	return (new);
 }
