@@ -11,8 +11,6 @@
  */
 list_t *add_node(list_t **head, const char *str)
 {
-	char *dup;
-	int len;
 	list_t *new;
 
 	new = malloc(sizeof(list_t));
@@ -21,23 +19,28 @@ list_t *add_node(list_t **head, const char *str)
 		return (NULL);
 	}
 
-	dup = strdup(str);
-	if (dup == NULL)
+	new->str = strdup(str);
+	if (!new->str)
 	{
 		free(new);
 		return (NULL);
 	}
-
-	for (len = 0; str[len];)
-	{
-		len++;
-	}
-
-	new->str = dup;
-	new->len = len;
+	new->len = _strlen_recursion(new->str);
 	new->next = *head;
-
 	*head = new;
 
 	return (new);
+}
+
+/**
+ * _strlen_recursion - returns the length of a string.
+ * @s: string.
+ * Return: length of @s.
+ */
+int _strlen_recursion(char *s)
+{
+	if (*s == 0)
+		return (0);
+	else
+		return (1 + _strlen_recursion(s + 1));
 }
