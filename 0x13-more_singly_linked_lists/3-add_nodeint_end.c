@@ -1,5 +1,4 @@
 #include "lists.h"
-#include <stdlib.h>
 /**
  * This function that adds a new at the end of a listint_t list.
  * Returns the address of a new element.
@@ -7,26 +6,27 @@
  */
 listint_t *add_nodeint_end(listint_t **head, const int n)
 {
-	listint_t *node1, *tmp;
-	node1 = malloc(sizeof(listint_t));
-	if(node1 === NULL)
+	listint_t *tmp, *ptr;
+
+	tmp = malloc(sizeof(listint_t));
+	if (tmp == NULL)
 	{
-		return NULL:
+		return (NULL);
 	}
-	node1->n = n;
-	node1->next = NULL;
-	if(*head == NULL)
+
+	tmp->next = NULL;
+	tmp->n = n;
+
+	if (*head)
 	{
-		*head = node1;
+		ptr = *head;
+		while (ptr->next != NULL)
+			ptr = ptr->next;
+		ptr->next = tmp;
 	}
 	else
 	{
-		tmp = *head;
-		while(tmp->next != NULL)
-		{
-			tmp = tmp->next;
-		}
-	tmp->next = node1;
+		*head = tmp;
 	}
-	return node1;
+	return (tmp);
 }

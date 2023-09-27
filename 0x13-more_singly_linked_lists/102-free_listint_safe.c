@@ -1,5 +1,4 @@
 #include "lists.h"
-#include <stddef.h>
 /**
  * This function frees a listint_t list.
  * @h: Pointer to a pointer to the head of the list
@@ -7,21 +6,34 @@
  */
 size_t free_listint_safe(listint_t **h)
 {
-	listint_t *current = *h;
-	size_t size = 0;
-	listint_t *next_node = NULL;
-	while (current != NULL)
+	listint_t *current, *ptr, *head;
+	size_t i, k;
+
+	if (h == NULL || *h == NULL)
 	{
-		size++;
-		next_node = current->next;
-		free(current);
-		current = next_node;
-		if (current && current >= current->next)
+		return (0);
+	}
+	current = *h;
+	head = *h;
+	k = 0;
+
+	while (head != NULL)
+	{
+		ptr = *h;
+		for (k = 0; k < i; k++)
 		{
-			 *h = NULL;
-			  break;
+			if (ptr == current)
+			{
+				*h = NULL;
+				return (i);
+			}
+			ptr = ptr->next;
 		}
+		current = head->next;
+		free(head);
+		head = current;
+		i++;
 	}
 	*h = NULL;
-	return size;
+	return (i);
 }

@@ -1,21 +1,19 @@
 #include "lists.h"
-#include <stdlib.h>
 /**
  * This function frees listsint and sets head to Null.
  */
 void free_listint2(listint_t **head)
 {
-	listint_t *current, *next_node;
-	if (head == NULL || *head == NULL)
+	listint_t *ptr
+	if (head == NULL)
 	{
 		return NULL;
 	}
-	current = *head;
-	while(*current != NULL)
+	while(*head)
 	{
-		next_node = current->next;
-		free(current);
-		current = next_node;
+		ptr = (*head)->next;
+		free(*head)
+		*head = ptr;
 	}
-	*head = next_node;
+	*head = NULL;
 }
