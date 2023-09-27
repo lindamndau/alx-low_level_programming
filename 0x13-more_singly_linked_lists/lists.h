@@ -1,5 +1,5 @@
-#ifndef  LISTS_H
-#define LISTS_H
+#ifndef  _LISTS_H
+#define  _LISTS_H
 #include <stdio.h>
 #include <stdlib.h>
 /**
@@ -18,7 +18,9 @@ typedef struct listint_s
 
 /**
  * Protattypes for Lists.h
+ * 
  */
+int _putchar(char c);
 size_t print_listint(const listint_t *h);
 size_t listint_len(const listint_t *h);
 listint_t *add_nodeint(listint_t **head, const int n);
@@ -34,4 +36,4 @@ listint_t *reverse_listint(listint_t **head);
 size_t print_listint_safe(const listint_t *head);
 size_t free_listint_safe(listint_t **h);
 listint_t *find_listint_loop(listint_t *head);
-#endif
+#endif /LISTS_H/
