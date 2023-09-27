@@ -1,6 +1,7 @@
 #include "lists.h"
 /**
  * This function frees listsint and sets head to Null.
+ * Returns *head to ptr
  */
 void free_listint2(listint_t **head)
 {
@@ -15,5 +16,5 @@ void free_listint2(listint_t **head)
 		free(*head)
 		*head = ptr;
 	}
-	*head = NULL;
+	*head = ptr;
 }
