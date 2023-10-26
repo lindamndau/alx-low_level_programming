@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stddef.h>
 /**
  * This function prints a string followed by a new line.
  * Returns 0 whne successfull
