@@ -1,5 +1,5 @@
-#ifndef MAIN_HEADER_FILE
-#define MAIN_HEADER_FILE
+#ifndef MAIN_H
+#define MAIN_H
 
 void _puts_recursion(char *s);
 void _print_rev_recursion(char *s);
@@ -15,4 +15,5 @@ int _sqrt_recursion2(int n, int h);
 int actual_prime(int n, int i);
 int _strlen_recursion(char *s);
 int check_pal(char *s, int i, int len)
+
 #endif MAIN_HEADER_FILE
