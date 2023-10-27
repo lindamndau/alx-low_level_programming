@@ -1,5 +1,5 @@
-#ifndef MAIN_H
-#define MAIN_H
+#ifndef MAIN_HEADER_FILE
+#define MAIN_HEADER_FILE
 
 void _puts_recursion(char *s);
 void _print_rev_recursion(char *s);
@@ -11,4 +11,8 @@ int is_prime_number(int n);
 int is_palindrome(char *s);
 int wildcmp(char *s1, char *s2);
 int _putchar(char c);
-#endif
+int _sqrt_recursion2(int n, int h);
+int actual_prime(int n, int i);
+int _strlen_recursion(char *s);
+int check_pal(char *s, int i, int len)
+#endif MAIN_HEADER_FILE

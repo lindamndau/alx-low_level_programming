@@ -1,5 +1,4 @@
 #include "main.h"
-#include <math.h>
 
 /**
  * This function returns 1 if the input integer is a prime number
@@ -11,7 +10,7 @@ int is_prime_number(int n)
 	{
 		return (0);
 	}
-	return (is_prime_number(n, n - 1));
+	return (actual_prime(n, n - 1));
 }
 /**
  * actual_prime - calculates if a number is prime recursively
