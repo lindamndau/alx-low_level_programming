@@ -5,11 +5,15 @@
  *
  * Returns exit  success
  */
-int main (int argc, char ** argv)
+int main (int argc, char *argv[])
 {
-	if(argc--)
+	int main(int argc, char *argv[])
+{
+	int i;
+
+	for (i = 0; i < argc ; i++)
 	{
-		printf("%d\n", argc[0];
-		return (0);
+		printf("%s\n", argv[i]);
 	}
+	return (0);
 }
