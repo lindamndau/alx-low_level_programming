@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <stdlib.h>
+#include <main.h>
 /**
  * This main program prints the its own name
  *
@@ -7,7 +7,7 @@
  */
 int main (int argc, char ** argv)
 {
-	while(argc--)
+	if(argc--)
 	{
 		printf("%d\n", argc[0];
 		return (0);

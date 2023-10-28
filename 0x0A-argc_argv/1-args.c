@@ -1,19 +1,12 @@
 #include <stdio.h>
-#include <stdlib.h>
+#include <main.h>
 /**
  * MAIN -  prints the number of arguments passed into it.
  * Returns (0)  the number of arguments passed into main
  *
  */
-int main(int argc, char *argv[])
+int main(int argc, __attribute__ ((unused)) char *argv[])
 {
-	while(argc--)
-	{
-		int count;
-		for(count = 0; count < argsc; count++)
-		{
-			print("%d\n", argv[count]);
-			return 0;
-		}
-	}
+	printf("%d\n", argc - 1);
+	return (0);
 }
