@@ -5,15 +5,8 @@
  * Returns (0)  the number of arguments passed into main
  *
  */
-int main(int argc, char ** argv)
+int main(int argc, char *argv[])
 {
-	int count;
-	if(argv--)
-	{
-		for(count = 0; count < argc; count++)
-		{
-			printf("%d\n", count);
-		}
-	}
-	return 0;
+	printf("%d\n", argc - 1);
+	return (0);
 }
