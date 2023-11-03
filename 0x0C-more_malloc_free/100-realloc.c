@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stdlib.h>
 /**
  * _realloc - Reallocate memory for a pointer to a new size.
  * @tmp_b: temporay pointer
