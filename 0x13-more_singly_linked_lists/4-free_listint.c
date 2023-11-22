@@ -1,7 +1,7 @@
 #include "lists.h"
 /**
  * @Discrpition -  frees a listint_t list.
- * @tmp - Temporary pointer of of type listint_t
+ * @node - pointer of of type listint_t
  * Returns - NULL
  *
  *
@@ -9,11 +9,19 @@
  */
 void free_listint(listint_t *head)
 {
-	listint_t *tmp;
-	while (head != NULL)
+	listint_t *node;
+	listint_t *next_node;
+
+	if (head)
 	{
-		tmp = head;
-		head = head->next;
+		node = head;
+		next_node = head->next;
+		while (next_node)
+		{
+			free(node);
+			node = next_node;
+			next_node = next_node->next;
+		}
+		free(node);
 	}
-	free (tmp);
 }

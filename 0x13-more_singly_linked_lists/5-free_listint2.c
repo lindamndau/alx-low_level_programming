@@ -1,22 +1,27 @@
 #include "lists.h"
 #include <stdlib.h>
 /**
- * @Discription
- * @tmp - temporary pointer
+ * @Discription - sets the head to NULL.
+ * @node - pointer to 
  * Returns: NULL;
  */
 void free_listint2(listint_t **head)
 {
-	listint_t * tmp;
-	if(head == NULL || *head == NULL)
+	listint_t *node;
+	listint_t *next_node;
+
+	if (!head)
 	{
 		return;
 	}
-	while(*head != NULL)
+	node = *head;
+	next_node = (*head)->next;
+	while (next_node)
 	{
-		tmp = (*head) -> next;
-		*head = tmp;
+		free(node);
+		node = next_node;
+		next_node = next_node->next;
 	}
-	free(head);
+	free(node);
 	*head = NULL;
 }

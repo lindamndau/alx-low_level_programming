@@ -1,28 +1,24 @@
-#include "main.h"
+#include "lists.h"
 /**
- *
- *
- *
- *
- *
- *
- *
- *
+ * @Discription -  prints a listint_t linked list.
+ * @node - auxillary node
+ * Returns: i of type size_t
  */
 size_t print_listint_safe(const listint_t *head)
 {
-	size_t cnt++ = 0;
-	const listint_t *tmp = head;
-	while (tmp)
+	size_t i = 0;
+	const listint_t *node = head;
+
+	if (!head)
 	{
-		if(!tmp)
-		{
-			fprintf(stderr, "Error: cycle detected\n");
-			exit(98);
-		}
-		printf("%d\n", tmp->n);
-		cnt++;
-		tmp = tmp -> next;
+		exit(98);
 	}
-	return cnt;
+
+	while (node)
+	{
+		printf("[%p] %i\n", (void *)node, node->n);
+		node = node->next;
+		i++;
+	}
+	return (i);
 }

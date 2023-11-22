@@ -1,28 +1,25 @@
 #include "lists.h"
+#include <stdlib.h>
 /**
- *
- *
- *
- *
- *
+ * @Discription -  frees a listint_t list.
+ * @tmp - Temporary pointer
+ * @ Returns: i counter
  *
  */
 size_t free_listint_safe(listint_t **h)
 {
-	size_t size = 0;
-	listint_t *crnt;
-	if(!h || *h)
-	{
-		return 0;
-	}
-	crnt = *h;
-	while(crnt)
-	{
-		listint_t *tmp = crnt -> next;
-		free (crnt);
-		crnt = tmp;
-		size++;
-	}
-	*h = NULL;
-	return size;
+	listint_t *tmp;
+	size_t i;
+	if (h == NULL || *h == NULL)
+    	{
+        	return (0);
+    	}
+	tmp = *h;
+	for (i = 0; tmp != NULL; i++)
+    	{	
+       		tmp = tmp->next;
+        	free(*h);
+        	*h = tmp;
+    	}
+    	return (i);
 }
