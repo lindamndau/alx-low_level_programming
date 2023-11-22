@@ -1,10 +1,8 @@
 #include "lists.h"
+#include <stdlib.h>
 /**
- *
- *
- *
- *
- *
+ * @Discription - adds a new node at the beginning of a listint_t list.
+ * *new_node - represents new node to 
  *
  */
 listint_t *add_nodeint(listint_t **head, const int n)

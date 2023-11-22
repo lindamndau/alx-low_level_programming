@@ -1,9 +1,10 @@
 #include "lists.h"
+#include <stdlib.h>
 /**
- *
- *
- *
- *
+ * @Discrption - adds a new node at the end of a listint_t list.
+ * @new_node - represents a new node to be added
+ * @tmp - Temporary pointer.
+ * Returns : new added node
  *
  *
  *
