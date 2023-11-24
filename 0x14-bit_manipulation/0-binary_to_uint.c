@@ -24,7 +24,7 @@ unsigned int binary_to_uint(const char *b)
 		}
 	}
 
-	for (power = 1, result = 0, len--; len >= 0; len--, p *= 2)
+	for (p = 1, result = 0, len--; len >= 0; len--, p *= 2)
 	{
 		if (b[len] == '1')
 		{
