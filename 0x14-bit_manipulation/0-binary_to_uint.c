@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stdio.h>
 /**
  * @Discription -  converts a binary number to an unsigned int.
  * Returns : converted string
