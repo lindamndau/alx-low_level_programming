@@ -1,5 +1,4 @@
 #include "lists.h"
-#include <stdio.h>
 /**
  * @Discription -  Returns total elements in a list.
  * @Count - iterator
@@ -8,7 +7,7 @@
  */
 size_t dlistint_len(const dlistint_t *h)
 {
-	size-t count = 0;
+	size_t count = 0;
 	while(h != NULL)
 	{
 		h = h -> next;
